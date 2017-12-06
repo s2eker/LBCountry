@@ -1,0 +1,6 @@
+framework module Pods_LBCountry_Tests {
+  umbrella header "Pods-LBCountry_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

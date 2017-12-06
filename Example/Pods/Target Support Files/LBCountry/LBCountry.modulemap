@@ -1,0 +1,6 @@
+framework module LBCountry {
+  umbrella header "LBCountry-umbrella.h"
+
+  export *
+  module * { export * }
+}

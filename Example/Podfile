@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LBCountry_Example' do
+  pod 'LBCountry', :path => '../'
+
+  target 'LBCountry_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

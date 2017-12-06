@@ -1,0 +1,16 @@
+PODS:
+  - LBCountry (0.1.0)
+
+DEPENDENCIES:
+  - LBCountry (from `../`)
+
+EXTERNAL SOURCES:
+  LBCountry:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LBCountry: 8542cf9bec8097112f8c909b3c4b0d9621659af8
+
+PODFILE CHECKSUM: ddfef376d888a41d1e094509b40f02b252a4a50e
+
+COCOAPODS: 1.2.1
