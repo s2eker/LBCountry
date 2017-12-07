@@ -6,9 +6,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LBCountryModel.h"
 
-@class LBCountryModel;
+@class LBCountrySearchVC;
+@protocol LBCountrySearchVCDelegate<NSObject>
+@optional
+- (void)searchVC:(LBCountrySearchVC *)vc selectCountry:(LBCountryModel *)country;
+@end
+
 @interface LBCountrySearchVC : UIViewController
-- (void)showCountries:(NSArray <LBCountryModel *>*)countries;
+@property (nonatomic, weak)id<LBCountrySearchVCDelegate>delegate;
+
+@property (nonatomic, weak) UISearchController *searchVC;
+- (void)showCountries:(NSArray <LBCountryModel *>*)countries showPhoneCodePlus:(BOOL)showPhoneCodePlus;
 
 @end

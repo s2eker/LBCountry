@@ -6,10 +6,9 @@
 //
 
 #import "LBCountryVC.h"
-#import "LBCountryModel.h"
 #import "LBCountrySearchVC.h"
 
-@interface LBCountryVC ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating>
+@interface LBCountryVC ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, LBCountrySearchVCDelegate>
 @property (nonatomic, strong)NSDictionary *dataSource;
 @property (nonatomic, strong)NSArray *keys;
 @property (nonatomic, strong)NSArray *searchResults;
@@ -18,6 +17,7 @@
 @end
 
 @implementation LBCountryVC
+#pragma mark -- Getter
 - (NSDictionary *)dataSource {
     if (!_dataSource) {
         _dataSource = [NSDictionary dictionary];
@@ -38,22 +38,35 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.tableHeaderView = self.searchVC.searchBar;
-//        [_tableView setSectionIndexColor:[UIColor clearColor]];
     }
     return _tableView;
 }
 - (UISearchController *)searchVC {
     if (!_searchVC) {
         LBCountrySearchVC *vc = [LBCountrySearchVC new];
+        vc.delegate = self;
         _searchVC = [[UISearchController alloc] initWithSearchResultsController:vc];
         _searchVC.searchResultsUpdater = self;
-        _searchVC.definesPresentationContext = YES;
-        _searchVC.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
-        _searchVC.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        if (self.uiConfig) {
+            self.uiConfig(_searchVC);
+        }else {
+            _searchVC.hidesNavigationBarDuringPresentation = NO;
+            _searchVC.definesPresentationContext = YES;
+            _searchVC.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+            _searchVC.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        }
     }
     return _searchVC;
 }
 
+- (NSString *)language {
+    if (!_language) {
+        _language = [NSLocale preferredLanguages].firstObject;
+    }
+    return _language;
+}
+
+#pragma mark -- Life
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -64,12 +77,25 @@
 
 #pragma mark -- Init
 - (void)initSet {
-    self.dataSource = [LBCountryModel allCountriesDictionary];
+    self.dataSource = [LBCountryModel allCountriesDictionaryOfLanguage:self.language];
+    self.showPhoneCodePlus = YES;
 }
 - (void)initLayout {
     [self.view addSubview:self.tableView];
 }
 
+#pragma mark -- Utilities
+- (void)dealSelectCountry:(LBCountryModel *)country {
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else if(self.presentedViewController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    if (self.selectCountry) {
+        self.selectCountry(country);
+    }
+    NSLog(@"select country:%@", country);
+}
 
 #pragma mark -- UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -98,11 +124,13 @@
     NSString *key = self.keys[indexPath.section];
     NSArray *arr = self.dataSource[key];
     LBCountryModel *m = arr[indexPath.row];
-    cell.textLabel.text = m.countryName;
-    cell.detailTextLabel.text = m.phoneCode;
+    m.displayCountryName = [m localizedCountryNameInLanguage:self.language];
+    cell.textLabel.text = m.displayCountryName;
+    cell.detailTextLabel.text = self.showPhoneCodePlus ? m.phoneCodePlus : m.phoneCode;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    LBCountryModel *m = self.dataSource[self.keys[indexPath.section]][indexPath.row];
+    LBCountryModel *m = self.dataSource[self.keys[indexPath.section]][indexPath.row];
+    [self dealSelectCountry:m];
 }
 
 #pragma mark -- UISearchResultsUpdating
@@ -111,19 +139,28 @@
     if (text.length <= 0) {
         return;
     }
+    __block NSString *countryName;
     __block NSMutableArray *searchResults = [NSMutableArray arrayWithCapacity:0];
     __weak typeof(self) weakSelf = self;
     [self.keys enumerateObjectsUsingBlock:^(NSString *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSArray *arr = weakSelf.dataSource[obj];
         for (LBCountryModel *m in arr) {
-            if ([m.countryName.lowercaseString containsString:text.lowercaseString] ||
-                [m.countryNameOfPinyin hasPrefix:text]) {
+            countryName = m.displayCountryName;
+            if ([countryName containsString:text] ||
+                [countryName.lowercaseString containsString:text.lowercaseString] ||
+                [countryName.lbc_pinyin.lowercaseString containsString:text.lowercaseString]) {
                 [searchResults addObject:m];
             }
         }
     }];
     LBCountrySearchVC *vc = (LBCountrySearchVC *)searchController.searchResultsController;
-    [vc showCountries:searchResults];
+    [vc showCountries:searchResults showPhoneCodePlus:self.showPhoneCodePlus];
+}
+
+#pragma mark -- LBCountrySearchVCDelegate
+- (void)searchVC:(LBCountrySearchVC *)vc selectCountry:(LBCountryModel *)country {
+    self.searchVC.active = NO;
+    [self dealSelectCountry:country];
 }
 
 @end

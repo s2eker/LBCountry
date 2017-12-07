@@ -9,7 +9,9 @@
 #import "LBCountryModel.h"
 
 @interface LBCountrySearchVC ()<UITableViewDataSource, UITableViewDelegate>
-
+{
+    BOOL _showPhoneCodePlus;
+}
 @property (nonatomic, strong)NSArray *dataSource;
 @property (nonatomic, strong)UITableView *tableView;
 
@@ -58,15 +60,19 @@
 #pragma mark -- UITableViewDelegate
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     LBCountryModel *m = self.dataSource[indexPath.row];
-    cell.textLabel.text = m.countryName;
-    cell.detailTextLabel.text = m.phoneCode;
+    cell.textLabel.text = m.displayCountryName;
+    cell.detailTextLabel.text = _showPhoneCodePlus ? m.phoneCodePlus : m.phoneCode;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    LBCountryModel *m = self.dataSource[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(searchVC:selectCountry:)]) {
+        [self.delegate searchVC:self selectCountry:m];
+    }
 }
 
 #pragma mark -- Public
-- (void)showCountries:(NSArray <LBCountryModel *>*)countries {
+- (void)showCountries:(NSArray <LBCountryModel *>*)countries showPhoneCodePlus:(BOOL)showPhoneCodePlus{
+    _showPhoneCodePlus = showPhoneCodePlus;
     self.dataSource = countries;
     [self.tableView reloadData];
 }

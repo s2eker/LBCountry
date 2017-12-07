@@ -265,67 +265,67 @@ static NSArray *_countryList;
         }
     });
 }
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"countryCode:%@ phoneCode:%@ phoneCodePlus:%@ displayCountryName:%@ localizedCountryName:%@", self.countryCode, self.phoneCode, self.phoneCodePlus, self.displayCountryName, self.localizedCountryName];
+}
+
 #pragma mark -- Private
-+ (NSString *)_currentLanguage {
-    NSString *lang = [NSLocale preferredLanguages].firstObject;
-    return lang;
+
+
+#pragma mark - Public
+#pragma mark -- Getter
+- (NSString *)phoneCodePlus {
+    return [NSString stringWithFormat:@"+%@", self.phoneCode];
 }
-+ (BOOL)_isChinese {
-    return [[self _currentLanguage] hasPrefix:@"zh"];
+- (BOOL)isChinaMainland {
+    return [self.countryCode isEqualToString:@"CN"];
 }
-- (NSString *)_firstCharOfCountryName {
-    NSString *name, *firstChar;
-    if ([LBCountryModel _isChinese]) {
-        name = self.countryNameOfPinyin;
-    }else {
-        name = self.countryName;
+- (BOOL)isChinaHongkong {
+    return [self.countryCode isEqualToString:@"HK"];
+}
+- (BOOL)isChinaMacao {
+    return [self.countryCode isEqualToString:@"MO"];
+}
+- (BOOL)isChinaTaiwan {
+    return [self.countryCode isEqualToString:@"TW"];
+}
+- (NSString *)localizedCountryName {
+    if (!_localizedCountryName) {
+        _localizedCountryName = [[NSLocale currentLocale] displayNameForKey:NSLocaleCountryCode value:self.countryCode];
     }
-    
-    if (name.length > 0) {
-        firstChar = [name substringToIndex:1];
-    }
-    return firstChar;
+    return _localizedCountryName;
 }
-- (NSString *)countryNameOfPinyin {
-    NSMutableString *source = self.countryName.mutableCopy;
-    CFStringTransform((__bridge CFMutableStringRef)source, NULL, kCFStringTransformMandarinLatin, NO);
-    CFStringTransform((__bridge CFMutableStringRef)source, NULL, kCFStringTransformStripDiacritics, NO);
-    return source;
+- (NSString *)localizedCountryNameInLanguage:(NSString *)language {
+    return [[NSLocale lbc_localWithCountryCode:self.countryCode language:language] displayNameForKey:NSLocaleCountryCode value:self.countryCode];
 }
 
 + (NSArray <LBCountryModel *>*)allCountriesArray {
-    NSString *lang = [[self class] _currentLanguage];
     __block NSMutableArray *arr = [NSMutableArray arrayWithCapacity:_countryList.count];
     NSString *countryCode;
     NSString *phoneCode;
-    NSString *identifier;
-    NSLocale *locale;
     for (NSDictionary *dic in _countryList) {
         countryCode = dic.allKeys.firstObject;
         phoneCode = dic.allValues.firstObject;
-        identifier = [NSLocale localeIdentifierFromComponents:@{NSLocaleCountryCode:countryCode,
-                                                                NSLocaleLanguageCode:lang
-                                                                }];
-        locale = [NSLocale localeWithLocaleIdentifier:identifier];
-        if (locale) {
-            LBCountryModel *m = [LBCountryModel new];
-            m.countryCode = countryCode;
-            m.phoneCode = phoneCode;
-            m.countryName = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
-            [arr addObject:m];
-        }
+        LBCountryModel *m = [LBCountryModel new];
+        m.countryCode = countryCode;
+        m.phoneCode = phoneCode;
+        [arr addObject:m];
     }
     return arr;
 }
-+ (NSDictionary *)allCountriesDictionary {
++ (NSDictionary <NSString *, LBCountryModel *>*)allCountriesDictionaryOfLanguage:(NSString *)language {
     NSArray *originalData = [LBCountryModel allCountriesArray];
+    BOOL isChinese = [language hasPrefix:@"zh"];
     __block NSString *preStr;
     __block NSString *nextStr;
     __block NSMutableArray *sectionArr = [NSMutableArray arrayWithCapacity:0];
     __block NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:0];
     __block NSString *firstChar;
+    __block NSString *countryName;
     [originalData enumerateObjectsUsingBlock:^(LBCountryModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        firstChar = [obj _firstCharOfCountryName];
+        countryName = [obj localizedCountryNameInLanguage:language];
+        firstChar = isChinese ? countryName.lbc_pinyin.lbc_firstUpperChar : countryName.lbc_firstUpperChar;
         if (!preStr) {
             preStr = firstChar;
             [sectionArr addObject:obj];
@@ -347,8 +347,14 @@ static NSArray *_countryList;
     }];
     return dic;
 }
+
 + (instancetype)currentCountry {
-    NSLocale *locale = [NSLocale currentLocale];
+    return [self countryWithLocale:[NSLocale currentLocale]];
+}
++ (instancetype)countryWithLocale:(NSLocale *)locale {
+    if (!locale) {
+        return nil;
+    }
     NSDictionary *localeInfo = [NSLocale componentsFromLocaleIdentifier:locale.localeIdentifier];
     NSString *countryCode = localeInfo[NSLocaleCountryCode];
     if (!countryCode) {
@@ -366,8 +372,42 @@ static NSArray *_countryList;
     LBCountryModel *m = [LBCountryModel new];
     m.countryCode = countryCode;
     m.phoneCode = phoneCode;
-    m.countryName = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
     return m;
 }
 
+@end
+
+
+#pragma mark - Category
+
+@implementation NSString (LBCountry)
+- (NSString *)lbc_pinyin {
+    NSMutableString *s = self.mutableCopy;
+    CFStringTransform((__bridge CFMutableStringRef)s, NULL, kCFStringTransformToLatin, NO);
+    CFStringTransform((__bridge CFMutableStringRef)s, NULL, kCFStringTransformStripDiacritics, NO);
+    return s;
+}
+- (NSString *)lbc_firstChar {
+    if (self.length > 0) {
+        return [self substringToIndex:1];
+    }
+    return nil;
+}
+- (NSString *)lbc_firstUpperChar {
+    return self.lbc_firstChar.uppercaseString;
+}
+@end
+
+
+@implementation NSLocale (LBCountry)
++ (instancetype)lbc_localWithCountryCode:(NSString *)countryCode language:(NSString *)language {
+    if (!countryCode || !language) {
+        return nil;
+    }
+    NSString *identifier = [NSLocale localeIdentifierFromComponents:@{NSLocaleCountryCode : countryCode,
+                                                                      NSLocaleLanguageCode : language,
+                                                                      }];
+    NSLocale *loc = [NSLocale localeWithLocaleIdentifier:identifier];
+    return loc;
+}
 @end

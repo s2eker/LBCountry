@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B40779378A95E7F9089AEFE32125AAF /* LBCountrySearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B480DEBE9FF067C36BF0265DC1B0F477 /* LBCountrySearchVC.m */; };
+		316A13E0D06F217D0D6C409EABC23ECC /* LBCountryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E74C620EBCDB3DBF6C506E12669D2B0A /* LBCountryVC.m */; };
+		33AEBF3127914864ED47C9CD5EC13D15 /* LBCountry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0039004EE5A1CA9049A39AD0D294F942 /* LBCountry-dummy.m */; };
 		42D80E5821E9DF4B2A7D5249DFEFB4D1 /* Pods-LBCountry_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD386BF8E3A0CA75CBE0DFC210C16FD5 /* Pods-LBCountry_Tests-dummy.m */; };
+		491BB2777F348C86BE2071B33EE56A5F /* LBCountrySearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E992FBBC0C7464BD15714167595D5E /* LBCountrySearchVC.m */; };
 		495E79E6216BA4BE890BDAE8F32F0025 /* Pods-LBCountry_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB87B401754B432E323624351DDB6D5 /* Pods-LBCountry_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56E8548B7E4DF703C80F6DEAA08F7DCB /* LBCountry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F1C6E36A4D71D937B7402C718C73CAC /* LBCountry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A212D29476457B12ECCE94096AEB62A /* LBCountryVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EA12FAD670BFCC04DC6649CAE52D649 /* LBCountryVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		606DCBC691A56ABDF0C4118C6EFE093D /* LBCountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F4DA93C57F683ED3401A0992DC3C28 /* LBCountryModel.m */; };
 		6D7AA289C65C5F6BEE540B09367C2019 /* Pods-LBCountry_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B48C18F39B370E9F0E2D4009C969D2E2 /* Pods-LBCountry_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7346AA0F2825E5ED235F2474965929F6 /* LBCountry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 460B8B5235D36D40815F06C384105DD2 /* LBCountry-dummy.m */; };
-		7C68AB616C1AA6A60BACEECF70F9D5F5 /* LBCountrySearchVC.h in Headers */ = {isa = PBXBuildFile; fileRef = AB7ADB1315AAEC919921B5DE83879B24 /* LBCountrySearchVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		749F3506EFC247A8B11C36ACCFECAE78 /* LBCountryModel.h in Headers */ = {isa = PBXBuildFile; fileRef = B0ADEE688FD45762AA56EAB5C43A4A07 /* LBCountryModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C3BC5440B7259706217A8D37CDFC1AA /* LBCountry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A50CB93394679D13A6F648736B4EB171 /* LBCountry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BCBEA2EC1D81B76E0825FAC18E9DAA6 /* Pods-LBCountry_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5579B32CDFCE9C7E3C38A538238D69 /* Pods-LBCountry_Example-dummy.m */; };
-		BC3D3914880863A28BBF64E4FD944A4F /* LBCountryModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 416C62F36EC913AF9E914B44DAF15C8C /* LBCountryModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C149A541053F019C3BD7D54877D31E5B /* LBCountryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4421412B6C4092D866F6538BB891EADB /* LBCountryVC.m */; };
+		B83CD3B2BCFE8B35057E365593097E3A /* LBCountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 179FD14F3A3579B56F31AD0E211FD112 /* LBCountryModel.m */; };
 		C1D420E8CB2010EB131DDDB4FAF1DD4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		CB870D432184A2A99CE5052972368756 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		DD0B638CBEAA63788C1CF85DCCD8BC0C /* LBCountrySearchVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EEDFF07A8EDD11A42933E32BA982E1 /* LBCountrySearchVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1FE3F6FC493828CC539042A7A143796 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		F67C8DBAD7F6AD3971E7C1A5709B9DD0 /* LBCountryVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 6753542113DC264C7EB0C4A2070FF697 /* LBCountryVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,38 +35,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02D414F53415633E20C47F67071A98BC /* LBCountry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LBCountry.modulemap; sourceTree = "<group>"; };
+		0039004EE5A1CA9049A39AD0D294F942 /* LBCountry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LBCountry-dummy.m"; sourceTree = "<group>"; };
 		0AFA0D022E4CC1E5802E916880D548F1 /* Pods-LBCountry_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LBCountry_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		179FD14F3A3579B56F31AD0E211FD112 /* LBCountryModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LBCountryModel.m; path = LBCountry/Classes/LBCountryModel.m; sourceTree = "<group>"; };
+		24EEDFF07A8EDD11A42933E32BA982E1 /* LBCountrySearchVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LBCountrySearchVC.h; path = LBCountry/Classes/LBCountrySearchVC.h; sourceTree = "<group>"; };
 		3C0ED67879F439904C2A485F4BAAE6ED /* Pods_LBCountry_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LBCountry_Example.framework; path = "Pods-LBCountry_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		416C62F36EC913AF9E914B44DAF15C8C /* LBCountryModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LBCountryModel.h; sourceTree = "<group>"; };
-		4421412B6C4092D866F6538BB891EADB /* LBCountryVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LBCountryVC.m; sourceTree = "<group>"; };
-		460B8B5235D36D40815F06C384105DD2 /* LBCountry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LBCountry-dummy.m"; sourceTree = "<group>"; };
-		51F4DA93C57F683ED3401A0992DC3C28 /* LBCountryModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LBCountryModel.m; sourceTree = "<group>"; };
 		5A1D33B5D4931CCCCD3CC5EB58CC16C2 /* Pods_LBCountry_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LBCountry_Tests.framework; path = "Pods-LBCountry_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB87B401754B432E323624351DDB6D5 /* Pods-LBCountry_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LBCountry_Tests-umbrella.h"; sourceTree = "<group>"; };
 		5D132C093EF7B36274CC0C227C1B0565 /* Pods-LBCountry_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LBCountry_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		5EA12FAD670BFCC04DC6649CAE52D649 /* LBCountryVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LBCountryVC.h; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6753542113DC264C7EB0C4A2070FF697 /* LBCountryVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LBCountryVC.h; path = LBCountry/Classes/LBCountryVC.h; sourceTree = "<group>"; };
 		68D6345C0CB628BE05DFA48CF793274D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C9881163C56CC3F9E3DF11015B8A2F8 /* LBCountry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LBCountry.xcconfig; sourceTree = "<group>"; };
 		6E547B71D923DE79430420AB88EC3910 /* Pods-LBCountry_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LBCountry_Tests-resources.sh"; sourceTree = "<group>"; };
-		6F1C6E36A4D71D937B7402C718C73CAC /* LBCountry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LBCountry-umbrella.h"; sourceTree = "<group>"; };
 		6FB85BF1FBDA1E523E1A8A3AD0510A2F /* Pods-LBCountry_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LBCountry_Example.release.xcconfig"; sourceTree = "<group>"; };
-		75586B7AA502AB123B47F9F3A96A668D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D3ED9E96DC1B87CDB9663DDF5B05D70 /* LBCountry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LBCountry.framework; path = LBCountry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2BDE826E9EA7A02BEF492179A4EFE7 /* Pods-LBCountry_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LBCountry_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8CE0233C9BB5E766A25E770705B9DA2B /* LBCountry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LBCountry-prefix.pch"; sourceTree = "<group>"; };
 		926F101092FB4D1DC53A3E2BDAA4B66E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		928D2E39549A00F83D3EC4806D6636ED /* Pods-LBCountry_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LBCountry_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A09889A2297E3BFA533AC27784080068 /* Pods-LBCountry_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LBCountry_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AB7ADB1315AAEC919921B5DE83879B24 /* LBCountrySearchVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LBCountrySearchVC.h; sourceTree = "<group>"; };
-		B1F8758382AF1815EA0B807A8E492A8B /* LBCountry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LBCountry-prefix.pch"; sourceTree = "<group>"; };
-		B480DEBE9FF067C36BF0265DC1B0F477 /* LBCountrySearchVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LBCountrySearchVC.m; sourceTree = "<group>"; };
+		A50CB93394679D13A6F648736B4EB171 /* LBCountry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LBCountry-umbrella.h"; sourceTree = "<group>"; };
+		B0ADEE688FD45762AA56EAB5C43A4A07 /* LBCountryModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LBCountryModel.h; path = LBCountry/Classes/LBCountryModel.h; sourceTree = "<group>"; };
 		B48C18F39B370E9F0E2D4009C969D2E2 /* Pods-LBCountry_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LBCountry_Example-umbrella.h"; sourceTree = "<group>"; };
+		B7E992FBBC0C7464BD15714167595D5E /* LBCountrySearchVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LBCountrySearchVC.m; path = LBCountry/Classes/LBCountrySearchVC.m; sourceTree = "<group>"; };
 		BA934FE9714B82F2E0CB033FF87061CA /* Pods-LBCountry_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LBCountry_Tests.modulemap"; sourceTree = "<group>"; };
+		CA5857D984E507B78CDED0D89F0BD6EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB5579B32CDFCE9C7E3C38A538238D69 /* Pods-LBCountry_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LBCountry_Example-dummy.m"; sourceTree = "<group>"; };
 		DB6F6A6D672E2BDA4A8686737966A220 /* Pods-LBCountry_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LBCountry_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E5E60262AC8CE8F359AAB78757F2C5DD /* Pods-LBCountry_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LBCountry_Example-frameworks.sh"; sourceTree = "<group>"; };
+		E74C620EBCDB3DBF6C506E12669D2B0A /* LBCountryVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LBCountryVC.m; path = LBCountry/Classes/LBCountryVC.m; sourceTree = "<group>"; };
+		E9C61043737080FCA765036A5D1D2811 /* LBCountry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LBCountry.xcconfig; sourceTree = "<group>"; };
+		EA9189278E31EB6A135B7DD6F2E2BE9C /* LBCountry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LBCountry.modulemap; sourceTree = "<group>"; };
 		ED7616C82AA7AE78ED082C6DFDC1E327 /* Pods-LBCountry_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LBCountry_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F2A7D38CBF555C615F5B7F40A22F60B5 /* Pods-LBCountry_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LBCountry_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F2CA968B6C8C1322A46BA5058FD8D36E /* Pods-LBCountry_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LBCountry_Example.modulemap"; sourceTree = "<group>"; };
@@ -102,6 +102,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05D2B12069A51FD3023C22D7501280D7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA5857D984E507B78CDED0D89F0BD6EF /* Info.plist */,
+				EA9189278E31EB6A135B7DD6F2E2BE9C /* LBCountry.modulemap */,
+				E9C61043737080FCA765036A5D1D2811 /* LBCountry.xcconfig */,
+				0039004EE5A1CA9049A39AD0D294F942 /* LBCountry-dummy.m */,
+				8CE0233C9BB5E766A25E770705B9DA2B /* LBCountry-prefix.pch */,
+				A50CB93394679D13A6F648736B4EB171 /* LBCountry-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/LBCountry";
+			sourceTree = "<group>";
+		};
 		0608EB86A50BB3AEA4267A0D484885C1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,12 +144,27 @@
 			path = "Target Support Files/Pods-LBCountry_Tests";
 			sourceTree = "<group>";
 		};
-		36255F5CB27462F43FC79F16347F5CAC /* Development Pods */ = {
+		3242AE5CA667A12E450CD6760FD41EE6 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E952E5CBB41719149934692D62BFDF70 /* LBCountry */,
+				51223A2321706FF0DE9A656D0A18091C /* LBCountry */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		51223A2321706FF0DE9A656D0A18091C /* LBCountry */ = {
+			isa = PBXGroup;
+			children = (
+				B0ADEE688FD45762AA56EAB5C43A4A07 /* LBCountryModel.h */,
+				179FD14F3A3579B56F31AD0E211FD112 /* LBCountryModel.m */,
+				24EEDFF07A8EDD11A42933E32BA982E1 /* LBCountrySearchVC.h */,
+				B7E992FBBC0C7464BD15714167595D5E /* LBCountrySearchVC.m */,
+				6753542113DC264C7EB0C4A2070FF697 /* LBCountryVC.h */,
+				E74C620EBCDB3DBF6C506E12669D2B0A /* LBCountryVC.m */,
+				05D2B12069A51FD3023C22D7501280D7 /* Support Files */,
+			);
+			name = LBCountry;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		797C7718AD85D1617788366389B227C5 /* Targets Support Files */ = {
@@ -151,34 +180,11 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				36255F5CB27462F43FC79F16347F5CAC /* Development Pods */,
+				3242AE5CA667A12E450CD6760FD41EE6 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				0608EB86A50BB3AEA4267A0D484885C1 /* Products */,
 				797C7718AD85D1617788366389B227C5 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8C272EEB65FD0C7684CB295769E47AFE /* LBCountry */ = {
-			isa = PBXGroup;
-			children = (
-				A5D39727F0B8F4AE8B7768BD89B300E9 /* Classes */,
-			);
-			name = LBCountry;
-			path = LBCountry;
-			sourceTree = "<group>";
-		};
-		A5D39727F0B8F4AE8B7768BD89B300E9 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				416C62F36EC913AF9E914B44DAF15C8C /* LBCountryModel.h */,
-				51F4DA93C57F683ED3401A0992DC3C28 /* LBCountryModel.m */,
-				AB7ADB1315AAEC919921B5DE83879B24 /* LBCountrySearchVC.h */,
-				B480DEBE9FF067C36BF0265DC1B0F477 /* LBCountrySearchVC.m */,
-				5EA12FAD670BFCC04DC6649CAE52D649 /* LBCountryVC.h */,
-				4421412B6C4092D866F6538BB891EADB /* LBCountryVC.m */,
-			);
-			name = Classes;
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -189,36 +195,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CAC3B776095E2F9526285A4C738862B6 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				75586B7AA502AB123B47F9F3A96A668D /* Info.plist */,
-				02D414F53415633E20C47F67071A98BC /* LBCountry.modulemap */,
-				6C9881163C56CC3F9E3DF11015B8A2F8 /* LBCountry.xcconfig */,
-				460B8B5235D36D40815F06C384105DD2 /* LBCountry-dummy.m */,
-				B1F8758382AF1815EA0B807A8E492A8B /* LBCountry-prefix.pch */,
-				6F1C6E36A4D71D937B7402C718C73CAC /* LBCountry-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/LBCountry";
-			sourceTree = "<group>";
-		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		E952E5CBB41719149934692D62BFDF70 /* LBCountry */ = {
-			isa = PBXGroup;
-			children = (
-				8C272EEB65FD0C7684CB295769E47AFE /* LBCountry */,
-				CAC3B776095E2F9526285A4C738862B6 /* Support Files */,
-			);
-			name = LBCountry;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		EDEEB04F76A809B6E6E69D8725626323 /* Pods-LBCountry_Example */ = {
@@ -258,14 +240,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B62785D8F66AC0D5F9D828A9A3FEA83A /* Headers */ = {
+		724317DAEA96BB83259C5286E7451117 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56E8548B7E4DF703C80F6DEAA08F7DCB /* LBCountry-umbrella.h in Headers */,
-				BC3D3914880863A28BBF64E4FD944A4F /* LBCountryModel.h in Headers */,
-				7C68AB616C1AA6A60BACEECF70F9D5F5 /* LBCountrySearchVC.h in Headers */,
-				5A212D29476457B12ECCE94096AEB62A /* LBCountryVC.h in Headers */,
+				7C3BC5440B7259706217A8D37CDFC1AA /* LBCountry-umbrella.h in Headers */,
+				749F3506EFC247A8B11C36ACCFECAE78 /* LBCountryModel.h in Headers */,
+				DD0B638CBEAA63788C1CF85DCCD8BC0C /* LBCountrySearchVC.h in Headers */,
+				F67C8DBAD7F6AD3971E7C1A5709B9DD0 /* LBCountryVC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,9 +276,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D38309CF6AB341514F5E7DDBA1BB3E1 /* Build configuration list for PBXNativeTarget "LBCountry" */;
 			buildPhases = (
-				079F6F8418EDE83AE98922166AB734F0 /* Sources */,
+				8BBCD0812907BE792E2747E16015CDBE /* Sources */,
 				946680086F7BC2E9C551642C8F48AB92 /* Frameworks */,
-				B62785D8F66AC0D5F9D828A9A3FEA83A /* Headers */,
+				724317DAEA96BB83259C5286E7451117 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -361,22 +343,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		079F6F8418EDE83AE98922166AB734F0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7346AA0F2825E5ED235F2474965929F6 /* LBCountry-dummy.m in Sources */,
-				606DCBC691A56ABDF0C4118C6EFE093D /* LBCountryModel.m in Sources */,
-				1B40779378A95E7F9089AEFE32125AAF /* LBCountrySearchVC.m in Sources */,
-				C149A541053F019C3BD7D54877D31E5B /* LBCountryVC.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8315C8B9A2B035C9C97D3C54B8E988F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				42D80E5821E9DF4B2A7D5249DFEFB4D1 /* Pods-LBCountry_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BBCD0812907BE792E2747E16015CDBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33AEBF3127914864ED47C9CD5EC13D15 /* LBCountry-dummy.m in Sources */,
+				B83CD3B2BCFE8B35057E365593097E3A /* LBCountryModel.m in Sources */,
+				491BB2777F348C86BE2071B33EE56A5F /* LBCountrySearchVC.m in Sources */,
+				316A13E0D06F217D0D6C409EABC23ECC /* LBCountryVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +407,7 @@
 			};
 			name = Release;
 		};
-		2D95ADE90B4FECAA756A944C570291E0 /* Debug */ = {
+		33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -480,6 +462,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
@@ -571,6 +554,35 @@
 			};
 			name = Release;
 		};
+		800A5E508E5D2FFAC6109DF8A195B1CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9C61043737080FCA765036A5D1D2811 /* LBCountry.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LBCountry/LBCountry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LBCountry/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LBCountry/LBCountry.modulemap";
+				PRODUCT_NAME = LBCountry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		B33AED380D1B0F32EC943C611D620F17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F2A7D38CBF555C615F5B7F40A22F60B5 /* Pods-LBCountry_Tests.release.xcconfig */;
@@ -636,9 +648,9 @@
 			};
 			name = Debug;
 		};
-		E110B7B48977769C2DE04F6D43F4342D /* Release */ = {
+		DBBA7ADCBF7082091CD7A6996A23FD48 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C9881163C56CC3F9E3DF11015B8A2F8 /* LBCountry.xcconfig */;
+			baseConfigurationReference = E9C61043737080FCA765036A5D1D2811 /* LBCountry.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -658,6 +670,7 @@
 				PRODUCT_NAME = LBCountry;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -665,41 +678,13 @@
 			};
 			name = Release;
 		};
-		F02084F7A824E550AB52EAA613ACB9DE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C9881163C56CC3F9E3DF11015B8A2F8 /* LBCountry.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LBCountry/LBCountry-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LBCountry/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LBCountry/LBCountry.modulemap";
-				PRODUCT_NAME = LBCountry;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D95ADE90B4FECAA756A944C570291E0 /* Debug */,
+				33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */,
 				731DC216E1A58545B559F6E0A2418060 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -717,8 +702,8 @@
 		8D38309CF6AB341514F5E7DDBA1BB3E1 /* Build configuration list for PBXNativeTarget "LBCountry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F02084F7A824E550AB52EAA613ACB9DE /* Debug */,
-				E110B7B48977769C2DE04F6D43F4342D /* Release */,
+				800A5E508E5D2FFAC6109DF8A195B1CC /* Debug */,
+				DBBA7ADCBF7082091CD7A6996A23FD48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
