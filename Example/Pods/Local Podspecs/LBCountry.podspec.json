@@ -1,19 +1,19 @@
 {
   "name": "LBCountry",
-  "version": "0.1.0",
-  "summary": "A short description of LBCountry.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/294842586@qq.com/LBCountry",
+  "version": "0.0.2",
+  "summary": "All countries in the world",
+  "description": "All countries in the world, use for phone register.",
+  "homepage": "https://github.com/s2eker/LBCountry",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "294842586@qq.com": "294842586@qq.com"
+    "s2eker": "s2eker"
   },
   "source": {
-    "git": "https://github.com/294842586@qq.com/LBCountry.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/s2eker/LBCountry.git",
+    "tag": "0.0.2"
   },
   "platforms": {
     "ios": "8.0"
