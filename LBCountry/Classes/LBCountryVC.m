@@ -47,14 +47,10 @@
         vc.delegate = self;
         _searchVC = [[UISearchController alloc] initWithSearchResultsController:vc];
         _searchVC.searchResultsUpdater = self;
-        if (self.uiConfig) {
-            self.uiConfig(_searchVC, self.tableView);
-        }else {
-            _searchVC.hidesNavigationBarDuringPresentation = NO;
-            _searchVC.definesPresentationContext = YES;
-            _searchVC.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
-            _searchVC.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-        }
+        _searchVC.hidesNavigationBarDuringPresentation = NO;
+        _searchVC.definesPresentationContext = YES;
+        _searchVC.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+        _searchVC.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     }
     return _searchVC;
 }
@@ -79,6 +75,10 @@
 - (void)initSet {
     self.dataSource = [LBCountryModel allCountriesDictionaryOfLanguage:self.language];
     self.showPhoneCodePlus = YES;
+    
+    if (self.uiConfig) {
+        self.uiConfig(self.searchVC, self.tableView);
+    }
 }
 - (void)initLayout {
     [self.view addSubview:self.tableView];
