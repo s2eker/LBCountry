@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "LBCountryModel.h"
 
-typedef void (^LBCountryUIConfig)(UISearchController *searchVC);
+typedef void (^LBCountryUIConfig)(UISearchController *searchVC, UITableView *tableView);
 
 @interface LBCountryVC : UIViewController
 

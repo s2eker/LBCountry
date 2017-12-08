@@ -48,7 +48,7 @@
         _searchVC = [[UISearchController alloc] initWithSearchResultsController:vc];
         _searchVC.searchResultsUpdater = self;
         if (self.uiConfig) {
-            self.uiConfig(_searchVC);
+            self.uiConfig(_searchVC, self.tableView);
         }else {
             _searchVC.hidesNavigationBarDuringPresentation = NO;
             _searchVC.definesPresentationContext = YES;

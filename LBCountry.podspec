@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LBCountry'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = 'All countries in the world'
 
 # This description is used to generate tags and improve search results.
