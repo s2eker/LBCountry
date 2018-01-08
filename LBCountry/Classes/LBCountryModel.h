@@ -37,6 +37,7 @@ typedef void (^LBCountrySelectBlock) (LBCountryModel *country);
 - (NSString *)lbc_pinyin;
 - (NSString *)lbc_firstChar;
 - (NSString *)lbc_firstUpperChar;
+- (NSString *)lbc_trimSpace;
 @end
 
 @interface NSLocale (LBCountry)

@@ -325,6 +325,7 @@ static NSArray *_countryList;
     __block NSString *countryName;
     [originalData enumerateObjectsUsingBlock:^(LBCountryModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         countryName = [obj localizedCountryNameInLanguage:language];
+        obj.displayCountryName = countryName;
         firstChar = isChinese ? countryName.lbc_pinyin.lbc_firstUpperChar : countryName.lbc_firstUpperChar;
         if (!preStr) {
             preStr = firstChar;
@@ -395,6 +396,9 @@ static NSArray *_countryList;
 }
 - (NSString *)lbc_firstUpperChar {
     return self.lbc_firstChar.uppercaseString;
+}
+- (NSString *)lbc_trimSpace {
+    return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 @end
 

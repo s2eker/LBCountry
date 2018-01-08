@@ -131,7 +131,6 @@
     NSString *key = self.keys[indexPath.section];
     NSArray *arr = self.dataSource[key];
     LBCountryModel *m = arr[indexPath.row];
-    m.displayCountryName = [m localizedCountryNameInLanguage:self.language];
     cell.textLabel.text = m.displayCountryName;
     cell.detailTextLabel.text = self.showPhoneCodePlus ? m.phoneCodePlus : m.phoneCode;
 }
@@ -146,22 +145,27 @@
     if (text.length <= 0) {
         return;
     }
-    __block NSString *countryName;
-    __block NSMutableArray *searchResults = [NSMutableArray arrayWithCapacity:0];
-    __weak typeof(self) weakSelf = self;
-    [self.keys enumerateObjectsUsingBlock:^(NSString *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSArray *arr = weakSelf.dataSource[obj];
-        for (LBCountryModel *m in arr) {
-            countryName = m.displayCountryName;
-            if ([countryName containsString:text] ||
-                [countryName.lowercaseString containsString:text.lowercaseString] ||
-                [countryName.lbc_pinyin.lowercaseString containsString:text.lowercaseString]) {
-                [searchResults addObject:m];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        __block NSString *countryName;
+        __block NSMutableArray *searchResults = [NSMutableArray arrayWithCapacity:0];
+        __weak typeof(self) weakSelf = self;
+        [self.keys enumerateObjectsUsingBlock:^(NSString *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSArray *arr = weakSelf.dataSource[obj];
+            for (LBCountryModel *m in arr) {
+                countryName = m.displayCountryName;
+                if ([countryName containsString:text] ||
+                    [countryName.lowercaseString containsString:text.lowercaseString] ||
+                    [countryName.lbc_pinyin.lowercaseString containsString:text.lowercaseString] ||
+                    [countryName.lbc_pinyin.lbc_trimSpace.lowercaseString containsString:text.lowercaseString]) {
+                    [searchResults addObject:m];
+                }
             }
-        }
-    }];
-    LBCountrySearchVC *vc = (LBCountrySearchVC *)searchController.searchResultsController;
-    [vc showCountries:searchResults showPhoneCodePlus:self.showPhoneCodePlus];
+        }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            LBCountrySearchVC *vc = (LBCountrySearchVC *)searchController.searchResultsController;
+            [vc showCountries:searchResults showPhoneCodePlus:self.showPhoneCodePlus];
+        });
+    });
 }
 
 #pragma mark -- LBCountrySearchVCDelegate
