@@ -367,13 +367,16 @@ static NSArray *_countryList;
             phoneCode = dic.allValues.firstObject;
         }
     }
+    NSString *languageCode = localeInfo[NSLocaleLanguageCode];
     if (!phoneCode) {
         return nil;
     }
     LBCountryModel *m = [LBCountryModel new];
     m.countryCode = countryCode;
     m.phoneCode = phoneCode;
-    m.displayCountryName = [m localizedCountryNameInLanguage:locale.languageCode];
+    if (languageCode) {
+        m.displayCountryName = [m localizedCountryNameInLanguage:languageCode];
+    }
     return m;
 }
 
