@@ -373,6 +373,7 @@ static NSArray *_countryList;
     LBCountryModel *m = [LBCountryModel new];
     m.countryCode = countryCode;
     m.phoneCode = phoneCode;
+    m.displayCountryName = [m localizedCountryNameInLanguage:locale.languageCode];
     return m;
 }
 

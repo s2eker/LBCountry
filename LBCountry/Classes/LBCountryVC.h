@@ -15,6 +15,7 @@ typedef void (^LBCountryUIConfig)(UISearchController *searchVC, UITableView *tab
 @property (nonatomic, copy) LBCountrySelectBlock selectCountry;
 @property (nonatomic, copy) LBCountryUIConfig uiConfig;
 @property (nonatomic, copy) NSString *language;
+@property (nonatomic, strong) LBCountryModel *currentCountry;
 @property (nonatomic, assign) BOOL showPhoneCodePlus;
 
 

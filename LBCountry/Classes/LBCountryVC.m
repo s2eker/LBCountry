@@ -66,9 +66,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     [self initSet];
     [self initLayout];
+}
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    __weak typeof(self) weakSelf = self;
+    __block NSIndexPath *indexPath = nil;
+    [self.dataSource enumerateKeysAndObjectsUsingBlock:^(NSString *  _Nonnull key, NSArray *  _Nonnull arr, BOOL * _Nonnull stop) {
+        [arr enumerateObjectsUsingBlock:^(LBCountryModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([weakSelf.currentCountry.countryCode isEqualToString:obj.countryCode]) {
+                indexPath = [NSIndexPath indexPathForRow:idx inSection:[weakSelf.keys indexOfObject:key]];
+            }
+        }];
+    }];
+    if (indexPath) {
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    }
 }
 
 #pragma mark -- Init
@@ -90,6 +104,7 @@
     [NSLayoutConstraint activateConstraints:@[t,b,l,r]];
     
 }
+
 
 #pragma mark -- Utilities
 - (void)dealSelectCountry:(LBCountryModel *)country {
