@@ -25,7 +25,7 @@ typedef void (^LBCountrySelectBlock) (LBCountryModel *country);
 + (NSArray <LBCountryModel *>*)allCountriesArray;
 + (NSDictionary <NSString *, LBCountryModel *>*)allCountriesDictionaryOfLanguage:(NSString *)language;
 + (instancetype)countryWithLocale:(NSLocale *)locale;
-
++ (instancetype)countryWithCountryCode:(NSString *)countryCode;
 
 
 @end

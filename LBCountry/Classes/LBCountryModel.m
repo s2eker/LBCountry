@@ -379,6 +379,26 @@ static NSArray *_countryList;
     }
     return m;
 }
++ (instancetype)countryWithCountryCode:(NSString *)countryCode {
+    LBCountryModel *m = [LBCountryModel new];
+    m.countryCode = countryCode;
+    NSString *phoneCode;
+    for (NSDictionary *dic in _countryList) {
+        if ([dic.allKeys.firstObject isEqualToString:countryCode]) {
+            phoneCode = dic.allValues.firstObject;
+        }
+    }
+    if (!phoneCode) {
+        return nil;
+    }
+    m.phoneCode = phoneCode;
+    NSDictionary *localeInfo = [NSLocale componentsFromLocaleIdentifier:[NSLocale currentLocale].localeIdentifier];
+    NSString *languageCode = localeInfo[NSLocaleLanguageCode];
+    if (languageCode) {
+        m.displayCountryName = [m localizedCountryNameInLanguage:languageCode];
+    }
+    return m;
+}
 
 @end
 
